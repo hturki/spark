@@ -19,6 +19,6 @@ FROM spark-base
 
 # If this docker file is being used in the context of building your images from a Spark distribution, the docker build
 # command should be invoked from the top level directory of the Spark distribution. E.g.:
-# docker build -t spark-executor:latest -f dockerfiles/executor/Dockerfile .
+# docker build -t spark-init:latest -f dockerfiles/init-container/Dockerfile .
 
 ENTRYPOINT [ "/sbin/tini", "--", "bin/spark-class", "org.apache.spark.deploy.rest.kubernetes.KubernetesSparkDependencyDownloadInitContainer" ]
